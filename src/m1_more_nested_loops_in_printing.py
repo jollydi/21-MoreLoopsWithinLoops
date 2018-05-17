@@ -194,7 +194,6 @@ def vee(r):
         print(end='\n')
 
 
-
 def run_test_numbers_constant_forward():
     """ Tests the    numbers_constant_forward    function. """
     print()
