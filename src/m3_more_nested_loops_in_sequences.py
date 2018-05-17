@@ -3,8 +3,8 @@ This project demonstrates NESTED LOOPS (i.e., loops within loops)
 in the context of SEQUENCES OF SUB-SEQUENCES.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Isaiah Jolly.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -17,7 +17,7 @@ def main():
 def run_test_largest_number():
     """ Tests the    largest_number    function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  largest_number  function defined below.
     #   Include at least ** 1 ** ADDITIONAL test beyond those we wrote.
     # ------------------------------------------------------------------
@@ -44,6 +44,10 @@ def run_test_largest_number():
     print('Expected and actual are:', expected, answer)
 
     # TO DO 2 (continued): Add your ADDITIONAL test(s) here:
+
+    expected = 91
+    answer = largest_number([[5, 24, 3], (90, 45, 6), [91, 2, 42]])
+    print('Expected and actual are:', expected, answer)
 
 
 def largest_number(seq_seq):
@@ -75,6 +79,16 @@ def largest_number(seq_seq):
     # TODO: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
+
+    largest = None
+    for i in range(len(seq_seq)):
+        if len(seq_seq[i]) == 0:
+            continue
+        largest = seq_seq[i][0]
+        for j in range(len(seq_seq[i])):
+            if seq_seq[i][j] > largest:
+                largest = seq_seq[i][j]
+    return largest
 
 
 def run_test_largest_negative_number():
