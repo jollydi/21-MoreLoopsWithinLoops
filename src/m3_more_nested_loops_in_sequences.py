@@ -8,6 +8,7 @@ Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
 
 import math
 
+
 def main():
     """ Calls the other functions to test them. """
     run_test_largest_number()
@@ -159,7 +160,7 @@ def largest_negative_number(seq_seq):
     largest = -math.inf
     for i in range(len(seq_seq)):
         for j in range(len(seq_seq[i])):
-            if seq_seq[i][j] < 0 and seq_seq[i][j] > largest:
+            if largest < seq_seq[i][j] < 0:
                 largest = seq_seq[i][j]
     if largest == -math.inf:
         return None
